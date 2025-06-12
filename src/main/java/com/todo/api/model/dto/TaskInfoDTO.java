@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-public class TaskIfoDTO implements Serializable {
+public class TaskInfoDTO implements Serializable {
 
     private String title;
     private LocalDateTime dueDate;
