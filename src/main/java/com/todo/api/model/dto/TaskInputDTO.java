@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-public class TaskAddDTO implements Serializable {
+public class TaskInputDTO implements Serializable {
 
     @NotNull
     @Length(min = 5, max = 50)
