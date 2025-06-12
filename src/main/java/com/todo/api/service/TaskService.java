@@ -13,4 +13,6 @@ public interface TaskService {
     void add(TaskInputDTO taskInputDTO);
 
     void update(TaskInputDTO taskInputDTO, Long id);
+
+    void delete(Long id);
 }

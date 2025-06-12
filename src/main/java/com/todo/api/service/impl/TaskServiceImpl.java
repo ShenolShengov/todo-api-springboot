@@ -42,4 +42,9 @@ public class TaskServiceImpl implements TaskService {
         updated.setId(id);
         taskRepository.save(updated);
     }
+
+    @Override
+    public void delete(Long id) {
+        taskRepository.deleteById(id);
+    }
 }
