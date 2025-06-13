@@ -1,15 +1,14 @@
 package com.todo.api.service.impl;
 
-import com.fasterxml.jackson.databind.util.BeanUtil;
-import com.todo.api.model.dto.TaskInputDTO;
 import com.todo.api.model.dto.TaskInfoDTO;
+import com.todo.api.model.dto.TaskInputDTO;
 import com.todo.api.model.entity.TaskEntity;
 import com.todo.api.repository.TaskRepository;
 import com.todo.api.service.TaskService;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.BeanUtils;
-import org.springframework.data.jpa.util.BeanDefinitionUtils;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -45,6 +44,8 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public void delete(Long id) {
-        taskRepository.deleteById(id);
+        TaskEntity toDelete = taskRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        taskRepository.delete(toDelete);
     }
 }
