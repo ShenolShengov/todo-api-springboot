@@ -28,5 +28,5 @@ public class TaskInputDTO implements Serializable {
     private LocalDateTime dueDate;
 
     @ValidTaskStatus
-    private TaskStatus taskStatus;
+    private String taskStatus;
 }
