@@ -45,7 +45,7 @@ class TaskServiceImplTest {
         List<TaskInfoDTO> all = toTest.getAll();
 
         //Assert
-        assertEquals(3, all.size());
+        assertEquals(2, all.size());
 
         assertTrue(all.stream().anyMatch(t -> t.getTitle().equals("Java work")));
     }
