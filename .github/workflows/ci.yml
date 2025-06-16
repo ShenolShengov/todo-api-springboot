@@ -7,7 +7,15 @@ on:
     branches: [ "main" ]
 
 jobs:
+  format-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: axel-op/googlejavaformat-action@v4
+        with:
+          args: "--set-exit-if-changed"
   build:
+    needs: format-check
     runs-on: ubuntu-latest
     permissions:
       contents: read
