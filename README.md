@@ -43,4 +43,3 @@ cd simple-todo-api
 
 # Run the app
 ./gradlew bootRun
-
